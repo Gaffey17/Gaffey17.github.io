@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统</title>
+    <link rel="stylesheet" href="text.css">
+</head>
+<body>
+    <div class="top-nav">
+        <div class="logo">
+            <img src="./images/logo.png" alt="">
+            <span>嘉辉教育</span>
+        </div>
+    </div>
+    <div class="left-menu">
+        <dl class="menu">
+            <dt>学生管理</dt>
+            <dd class="d0 active" data-id="student-Welcome">欢迎界面</dd>
+            <dd data-id="student-list" class="d1">学生列表</dd>
+            <dd data-id="student-add" class="d2">新增学生</dd>
+            <dd data-id="student-search" class="d3">搜索学生</dd>
+            <dd data-id="send-actor" class="d4">联系作者</dd>
+        </dl>
+    </div>
+    <div class="right-content">
+        <div class="student-Welcome" id="student-Welcome">
+            <span>欢迎登录学生信息管理系统</span>
+            <div class="icon">
+                <div class="icon1">
+                    <span class="iconfont c1">&#xe611;</span>
+                    <span class="text">学生列表</span>
+                </div>
+                <div class="icon2">
+                    <span class="iconfont c2">&#xe6a3;</span>
+                    <span class="text">新增学生</span>
+                </div>
+                <div class="icon3">
+                    <span class="iconfont c3">&#xe688;</span>
+                    <span class="text">搜索学生</span>
+                </div>
+                <div class="icon4">
+                    <span class="iconfont c4">&#xe66f;</span>
+                    <span class="text">联系作者</span>
+                </div>
+            </div>
+        </div>
+        <div class="student-list" id="student-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>邮箱</th>
+                        <th>年龄</th>
+                        <th>手机号</th>
+                        <th>住址</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tBody">
+                    <!-- <tr>
+                        <td>00001</td>
+                        <td>jay</td>
+                        <td>male</td>
+                        <td>111</td>
+                        <td>111</td>
+                        <td>111</td>
+                        <td>111</td>
+                        <td>
+                            <button class="edit btn">编辑</button>
+                            <button class="remove btn">删除</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div class="turn-Page" id="Page">
+                <button class="prev-Btn">上一页</button>
+                <!-- <span class="mathPage"></span> -->
+                <button class="next-Btn">下一页</button>
+            </div>
+            <div class="modal">
+                <div class="modal-content">
+                    <h2>编辑信息</h2>
+                    <form action="" id="edit-student-form" class="student-form">
+                        <div>
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div>
+                            <label for="sex">性别</label>
+                            <input type="radio" id="male" name="sex" value="0">
+                            <label class="sex" for="male">男</label>
+                            <input type="radio" id="female" name="sex" value="1">
+                            <label class="sex" for="female">女</label>
+                        </div>
+                        <div>
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div>
+                            <label for="number">学号</label>
+                            <input type="text" id="number" name="sNo" readonly>
+                        </div>
+                        <div>
+                            <label for="birth">出生年</label>
+                            <input type="text" id="birth" name="birth">
+                        </div>
+                        <div>
+                            <label for="phone">手机号</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div>
+                            <label for="address">住址</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                        <div class="btn">
+                            <input type="submit" value="提交" id="editBtn">
+                            <!-- <input type="reset" value="重置"> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="student-add" id="student-add">
+            <form action="" id="add-student-form" class="student-form">
+                <div>
+                    <label for="name">姓名</label>
+                    <input type="text" id="add-name" name="name">
+                </div>
+                <div>
+                    <label for="sex">性别</label>
+                    <input type="radio" id="add-male" name="sex" value="0" checked>
+                    <label class="sex" for="male">男</label>
+                    <input type="radio" id="add-female" name="sex" value="1">
+                    <label class="sex" for="female">女</label>
+                </div>
+                <div>
+                    <label for="email">邮箱</label>
+                    <input type="email" id="add-email" name="email">
+                </div>
+                <div>
+                    <label for="number">学号</label>
+                    <input type="text" id="add-number" name="sNo">
+                </div>
+                <div>
+                    <label for="birth">出生年</label>
+                    <input type="text" id="add-birth" name="birth">
+                </div>
+                <div>
+                    <label for="phone">手机号</label>
+                    <input type="text" id="add-phone" name="phone">
+                </div>
+                <div>
+                    <label for="address">住址</label>
+                    <input type="text" id="add-address" name="address">
+                </div>
+                <div class="btn">
+                    <input type="submit" value="提交" id="addBtn">
+                    <input type="reset" value="重置">
+                </div>
+            </form>
+        </div>
+        <div class="student-search" id="student-search">
+            <div class="search-function">
+                <select name="" id="search-People">
+                    <option value="null">请选择搜索条件</option>
+                    <option value="sNo">学号</option>
+                    <option value="name">姓名</option>
+                    <option value="address">地址</option>
+                    <option value="email">邮箱</option>
+                    <option value="age">年龄</option>
+                    <option value="phone">手机号</option>
+                </select>
+                <label for="search">搜索:</label>
+                <input type="text" name="search" id="send-text">
+                <input type="submit" value="提交" id="submit">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>邮箱</th>
+                        <th>年龄</th>
+                        <th>手机号</th>
+                        <th>住址</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="searchBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="send-actor" id="send-actor">
+            <iframe src="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=Tnd4fH17fnl6fA4-P2AtISM" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_12.png" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>
