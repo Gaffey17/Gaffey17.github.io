@@ -26,6 +26,7 @@
             $.ajax({
                 url: url,
                 method: 'get',
+                dataType: 'jsonp',
                 success: function(data) {
                     This.dataList = data; //存储请求过来的数据
                     This.listPlay();
